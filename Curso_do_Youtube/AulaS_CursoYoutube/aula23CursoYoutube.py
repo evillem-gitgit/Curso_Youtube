@@ -23,7 +23,7 @@ tupla = (
     ('chave', 'valor'),
     ('chave2', 'valor2'),
 )
-  #    Aqui! ele desenpacota cada elemento da tupla como dupla(chave, valor)
+  #Aqui! ele desenpacota cada elemento da tupla como dupla(chave, valor)
 ex5 = [(x, y) for x, y in tupla]
 ex5 = dict(ex5)
 print(ex5)
