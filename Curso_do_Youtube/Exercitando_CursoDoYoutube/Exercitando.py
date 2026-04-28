@@ -35,9 +35,6 @@ def verificar_cadastro_e_cadastrar(nome, senha):
         if nomeNaPlanilha == nome and senhaNaPlanilha == senha:
             cadastrado = True
             break
-
-    msg = 'Você já possui cadastro!' if cadastrado 'Você ainda não possui o cadastro!'
-        print()
     
     else:
         print()

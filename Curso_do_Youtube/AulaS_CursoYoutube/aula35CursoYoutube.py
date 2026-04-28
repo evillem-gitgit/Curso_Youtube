@@ -1,4 +1,8 @@
+from datetime import datetime 
+
 class Pessoa():# esse self é pra fazer referencia ao objeto
+
+    ano_atual = int(datetime.strftime(datetime.now(), '%Y'))
 
     def __init__(self, nome, idade, comendo=False, falando = False):
         self.nome = nome
@@ -7,11 +11,36 @@ class Pessoa():# esse self é pra fazer referencia ao objeto
         self.falando = falando
 
 
+    def falar(self, assunto):
+        if self.comendo:
+            print(f"{self.nome} não pode falar comendo.")
+            return
+        
+        if self.falando:
+            print(f"{self.nome} já esta falando")
+            return
+        
+        print(f"{self.nome} está falando sobre {assunto}")
+        self.falando = True
+
+    def parar_falar(self):
+        if not self.falando:
+            print(f"{self.nome} não esta falando")
+            return
+        
+        print(f"{self.nome} parou de falar")
+        self.falando = False
+
+
     def comer(self, alimento):
         if self.comendo:
             print(f'{self.nome} já esta comendo.')
             return
-     
+        
+        if self.falando:
+            print(f'{self.nome} não pode comer enquanto fala')
+            return
+    
         print(f'{self.nome} está comendo {alimento}.')
         self.comendo = True
         
@@ -23,3 +52,9 @@ class Pessoa():# esse self é pra fazer referencia ao objeto
         
         print(f'{self.nome} parou de comer.')
         self.comendo = False
+
+    def get_ano_nascimento(self):
+        return self.ano_atual - self.idade
+
+
+    
